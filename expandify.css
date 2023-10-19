@@ -1,0 +1,42 @@
+/**
+ * ExpandifyCSS
+ * An open-source project for creating expandable and collapsible sections using CSS Grid.
+ *
+ * @author Armen Nersisyan
+ * @version 1.0.0
+ */
+
+/* Base Styles for the Expandable Section */
+/* ------------------------------------- */
+
+/*
+ * Display section as grid with initial row size of 0.
+ * Transition controls the expand/collapse animation speed.
+ */
+.expandableSection {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.5s ease-in-out;
+}
+
+/* Expanded State for the Expandable Section */
+/* ----------------------------------------- */
+
+/*
+ * When the 'expanded' class is added to 'expandableSection',
+ * it changes the grid row size to 1 fraction unit.
+ */
+.expandableSection.expanded {
+  grid-template-rows: 1fr;
+}
+
+/* Inner Wrapper Styles */
+/* -------------------- */
+
+/*
+ * Set overflow to hidden to ensure content outside
+ * the grid row doesn't show up during transition.
+ */
+.expandableSection-inner {
+  overflow: hidden;
+}
